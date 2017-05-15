@@ -17,14 +17,19 @@
     "babelify": "^7.3.0",
     "bootstrap": "^3.3.7",
     "browserify": "^14.3.0",
+    "child-process": "^1.0.2",
     "express": "^4.15.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.0.0",
+    "gulp-dotnet": "^2.0.0",
+    "gulp-dotnet-watch": "^0.2.0",
     "gulp-eslint": "^3.0.1",
     "gulp-open": "^2.0.0",
+    "gulp-util": "^3.0.8",
     "mocha": "^3.3.0",
+    "tree-kill": "^1.1.0",
     "vinyl-source-stream": "^1.1.0"
   }
 }

@@ -15,14 +15,14 @@ namespace Core.Web.Demo.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Your application description page. 1233456";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Your c ontact page. this is changed on the server";
 
             return View();
         }
