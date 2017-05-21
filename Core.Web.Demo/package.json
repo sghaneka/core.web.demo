@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel ./src -d ./lib",
     "test": "mocha --recursive --require babel-register --require babel-polyfill",
-    "start": "dotnet watch run --environment \"Development\" "
+    "start": "cross-env ASPNETCORE_ENVIRONMENT=Development dotnet watch run"
   },
   "author": "sg",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "bootstrap": "^3.3.7",
     "browserify": "^14.3.0",
     "child-process": "^1.0.2",
+    "cross-env": "^5.0.0",
     "event-stream": "^3.3.4",
     "express": "^4.15.2",
     "gulp": "^3.9.1",

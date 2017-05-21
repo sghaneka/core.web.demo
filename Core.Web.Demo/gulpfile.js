@@ -15,16 +15,15 @@ var config = {
         port: 5000,
         devBaseUrl: 'http://localhost',
         html: './src/*.html',
-        js: './src/**/*.js',
         css: [
-            'node_modules/bootstrap/dist/css/bootstrap.min.css',
-            'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
-            'node_modules/toastr/toastr.css',
             'css/site.css'
         ],
         images: './src/images/*',
         dist: './wwwroot',
-        mainJs: './src/About/main.js'
+        mainJsFiles: [
+            './src/About/main.js',
+            './src/Contact/main.js'
+        ]
     }
 }
 
@@ -41,34 +40,22 @@ gulp.task('open', ['connect'], function () {
         .pipe(open(options));
 });
 
-gulp.task('js', function () {
-    browserify(config.paths.mainJs)
-        .transform(babelify)
-        .bundle()
-        .on('error', console.error.bind(console))
-        .pipe(source('bundle.js'))
-        .pipe(gulp.dest(config.paths.dist + '/scripts'))
-        .pipe(connect.reload());
-});
-
 gulp.task('css', function () {
     gulp.src(config.paths.css)
         .pipe(concat('bundle.css'))
         .pipe(gulp.dest(config.paths.dist + '/css'));
 });
 
-gulp.task('js1', function () {
+gulp.task('js', function () {
     // we define our input files, which we want to have
     // bundled:
-    var files = [
-        './src/About/main.js',
-        './src/Contact/main.js'
-    ];
+    var files = config.paths.mainJsFiles;
     // map them to our stream function
     var tasks = files.map(function (entry) {
         return browserify({ entries: [entry] })
             .transform(babelify)
             .bundle()
+            .on('error', console.error.bind(console))
             .pipe(source(entry))
             // rename them to have "bundle as postfix"
             .pipe(rename({
