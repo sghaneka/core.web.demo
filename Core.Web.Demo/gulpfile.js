@@ -5,7 +5,7 @@ var browserify = require('browserify'); // Bundles JS
 var babelify = require('babelify');  // Transforms React JSX to JS
 var source = require('vinyl-source-stream'); // Use conventional text streams with Gulp
 var concat = require('gulp-concat'); //Concatenates files
-var lint = require('gulp-eslint'); //Lint JS files, including JSX
+var eslint = require('gulp-eslint'); //Lint JS files, including JSX
 var rename = require('gulp-rename');
 var es = require('event-stream');
 var dotnet = require('gulp-dotnet-watch');
@@ -13,6 +13,7 @@ var dotnet = require('gulp-dotnet-watch');
 var config = {
     paths: {
         port: 5000,
+        js: './src/**/*.js',
         devBaseUrl: 'http://localhost',
         html: './src/*.html',
         css: [
@@ -44,6 +45,16 @@ gulp.task('css', function () {
     gulp.src(config.paths.css)
         .pipe(concat('bundle.css'))
         .pipe(gulp.dest(config.paths.dist + '/css'));
+});
+
+gulp.task('watch', function () {
+    gulp.watch(config.paths.js, ['js', 'lint']);
+});
+
+gulp.task('lint', function () {
+    return gulp.src(config.paths.js)
+       .pipe(eslint({ config: 'eslint.config.json' }))
+        .pipe(eslint.format());
 });
 
 gulp.task('js', function () {

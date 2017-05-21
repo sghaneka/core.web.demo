@@ -12,3 +12,6 @@ adjust external web tools and make sure you point to your local installations of
 
 npm install
 bower install
+
+
+########### gotta get that linting fixed first
