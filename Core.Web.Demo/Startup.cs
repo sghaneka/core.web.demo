@@ -46,7 +46,7 @@ namespace Core.Web.Demo
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
