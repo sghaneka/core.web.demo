@@ -2,6 +2,26 @@
     <script src="~/scripts/src/About/main.bundle.js" asp-append-version="true"></script>
 }
 
+@section Styles {
+<style>
+    #app {
+        padding: 50px;
+        background-color: #fff;
+    }
+
+    .letter {
+        padding: 10px;
+        margin: 10px;
+        background-color: #ffde00;
+        color: #333;
+        display: inline-block;
+        font-family: monospace;
+        font-size: 32px;
+        text-align: center;
+    }
+</style>
+}
+
 
 @{
     ViewData["Title"] = "About";

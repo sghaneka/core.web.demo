@@ -2,8 +2,12 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+
 var HelloWorld = require('./Components/HelloWorld.jsx');
 var Buttonify = require('./Components/Buttonify.jsx');
+//var Letter = require('./Components/Letter.jsx');
+var Letter = require('./Components/LetterReactStyle.jsx');
+var Card = require('./Components/Card.jsx');
 
 
 //ReactDOM.render(React.DOM.h1(null, "Hello World another way22!")
@@ -15,11 +19,30 @@ var Buttonify = require('./Components/Buttonify.jsx');
 //);
 
 
+//ReactDOM.render(
+//    <div>
+//        <HelloWorld greetTarget="BatMan" />
+//        <HelloWorld greetTarget="MegaMan" />
+//        <Buttonify behavior="Submit">SEND DATA</Buttonify> 
+//    </div>,
+//    document.getElementById('app')
+//);
+
+var destination = document.querySelector("#app");
+
+//ReactDOM.render(
+//    <div>
+//        <Letter bgcolor="#58B3FF">A</Letter>
+//        <Letter bgcolor="#FF605F">E</Letter>
+//        <Letter bgcolor="#FFD52E">I</Letter>
+//        <Letter bgcolor="#49DD8E">O</Letter>
+//        <Letter bgcolor="#AE99FF">U</Letter> 
+//    </div>,
+//    destination
+//);
+
 ReactDOM.render(
     <div>
-        <HelloWorld greetTarget="BatMan" />
-        <HelloWorld greetTarget="MegaMan" />
-        <Buttonify behavior="Submit">SEND DATA</Buttonify> 
-    </div>,
-    document.getElementById('app')
+        <Card color="#FFA737"/>
+    </div>, destination
 );

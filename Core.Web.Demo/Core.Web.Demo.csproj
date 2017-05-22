@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="src\About\Components\LetterReactStyle.jsx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="css\site.css">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -33,6 +37,8 @@
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\scripts\" />
     <Folder Include="wwwroot\scripts\" />
+    <Folder Include="wwwroot\scripts\src\About\" />
+    <Folder Include="wwwroot\scripts\src\Contact\" />
   </ItemGroup>
 
 </Project>
