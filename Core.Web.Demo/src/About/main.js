@@ -8,4 +8,4 @@ var ReactDOM = require('react-dom');
 //    document.getElementById('app')
 //);
 
-ReactDOM.render(React.DOM.h1(null, "Hello World another way2!"), document.getElementById("app"));
+ReactDOM.render(React.DOM.h1(null, "Hello World another way22!"), document.getElementById("app"));

@@ -19,7 +19,7 @@ var config = {
         css: [
             'css/site.css'
         ],
-        images: './src/images/*',
+        images: './images/*',
         dist: './wwwroot',
         mainJsFiles: [
             './src/About/main.js',
@@ -48,13 +48,18 @@ gulp.task('css', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(config.paths.js, ['js', 'lint']);
+    return gulp.watch(config.paths.js, ['js', 'lint']);
 });
 
 gulp.task('lint', function () {
     return gulp.src(config.paths.js)
        .pipe(eslint({ config: 'eslint.config.json' }))
         .pipe(eslint.format());
+});
+
+gulp.task('images', function () {
+    return gulp.src(config.paths.images)
+        .pipe(gulp.dest(config.paths.dist + '/images'));
 });
 
 gulp.task('js', function () {
