@@ -8,6 +8,7 @@ var Buttonify = require('./Components/Buttonify.jsx');
 //var Letter = require('./Components/Letter.jsx');
 var Letter = require('./Components/LetterReactStyle.jsx');
 var Card = require('./Components/Card.jsx');
+var LightningCounterDisplay = require('./State/Lightning.jsx');
 
 
 //ReactDOM.render(React.DOM.h1(null, "Hello World another way22!")
@@ -41,8 +42,14 @@ var destination = document.querySelector("#app");
 //    destination
 //);
 
+//ReactDOM.render(
+//    <div>
+//        <Card color="#FFA737"/>
+//    </div>, destination
+//);
+
 ReactDOM.render(
     <div>
-        <Card color="#FFA737"/>
+        <LightningCounterDisplay color="#FFA737"/>
     </div>, destination
 );

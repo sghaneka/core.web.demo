@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="src\About\Components\LetterReactStyle.jsx" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="css\site.css">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
