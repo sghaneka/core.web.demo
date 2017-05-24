@@ -9,6 +9,7 @@ var Buttonify = require('./Components/Buttonify.jsx');
 var Letter = require('./Components/LetterReactStyle.jsx');
 var Card = require('./Components/Card.jsx');
 var LightningCounterDisplay = require('./State/Lightning.jsx');
+var Circle = require('./DataToUI/Circle.jsx');
 
 
 //ReactDOM.render(React.DOM.h1(null, "Hello World another way22!")
@@ -48,8 +49,41 @@ var destination = document.querySelector("#app");
 //    </div>, destination
 //);
 
+//ReactDOM.render(
+//    <div>
+//        <LightningCounterDisplay color="#FFA737"/>
+//    </div>, destination
+//);
+
+
+function showCircle() {
+    var colors = ["#393E41", "#E94F37", "#1C89BF", "#A1D363"];
+    var ran = Math.floor(Math.random() * colors.length);
+    return <Circle bgColor={colors[ran]} />;
+}
+
+//ReactDOM.render(
+//    <div>
+//        {showCircle()}
+//        {showCircle()}
+//        {showCircle()}
+//        {showCircle()}
+//    </div>,
+//    destination
+//);
+
+var colors = ["#393E41", "#E94F37", "#1C89BF", "#A1D363",
+    "#85FFC7", "#297373", "#FF8552", "#A40E4C"];
+
+var renderData = [];
+
+for (var i = 0; i < colors.length; i++) {
+    renderData.push(<Circle key={i + colors[i]} bgColor={colors[i]} />);
+}
+
 ReactDOM.render(
     <div>
-        <LightningCounterDisplay color="#FFA737"/>
-    </div>, destination
+        {renderData}
+    </div>,
+    destination
 );
