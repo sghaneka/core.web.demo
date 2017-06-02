@@ -10,6 +10,7 @@ var Letter = require('./Components/LetterReactStyle.jsx');
 var Card = require('./Components/Card.jsx');
 var LightningCounterDisplay = require('./State/Lightning.jsx');
 var Circle = require('./DataToUI/Circle.jsx');
+var CounterParent = require('./Events/Counter.jsx');
 
 
 //ReactDOM.render(React.DOM.h1(null, "Hello World another way22!")
@@ -72,18 +73,25 @@ function showCircle() {
 //    destination
 //);
 
-var colors = ["#393E41", "#E94F37", "#1C89BF", "#A1D363",
-    "#85FFC7", "#297373", "#FF8552", "#A40E4C"];
+//var colors = ["#393E41", "#E94F37", "#1C89BF", "#A1D363",
+//    "#85FFC7", "#297373", "#FF8552", "#A40E4C"];
 
-var renderData = [];
+//var renderData = [];
 
-for (var i = 0; i < colors.length; i++) {
-    renderData.push(<Circle key={i + colors[i]} bgColor={colors[i]} />);
-}
+//for (var i = 0; i < colors.length; i++) {
+//    renderData.push(<Circle key={i + colors[i]} bgColor={colors[i]} />);
+//}
+
+//ReactDOM.render(
+//    <div>
+//        {renderData}
+//    </div>,
+//    destination
+//);
 
 ReactDOM.render(
     <div>
-        {renderData}
+        <CounterParent />
     </div>,
     destination
 );
