@@ -13,7 +13,7 @@ namespace Core.Web.Demo.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult ReactDemo1()
         {
             ViewData["Message"] = "Your application description page. 1233456";
 
