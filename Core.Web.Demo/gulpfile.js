@@ -32,6 +32,8 @@ gulp.task('connect', function () {
     // to do, write code to start the webserver using dotnet watch etc
 });
 
+
+
 gulp.task('open', ['connect'], function () {
     var options = {
         uri: config.paths.devBaseUrl + ':' + config.paths.port + '/',
@@ -48,7 +50,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('watch', function () {
-    return gulp.watch(config.paths.js, ['js', 'lint']);
+    return gulp.watch( [config.paths.js, config.paths.css], ['js', 'css', 'lint']);
 });
 
 gulp.task('lint', function () {
@@ -81,4 +83,8 @@ gulp.task('js', function () {
     });
     // create a merged stream
     return es.merge.apply(null, tasks);
+});
+
+gulp.task('build', ['css','js'], function () {
+    // to do, write code to start the webserver using dotnet watch etc
 });
