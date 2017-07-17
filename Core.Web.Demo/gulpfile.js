@@ -9,6 +9,7 @@ var eslint = require('gulp-eslint'); //Lint JS files, including JSX
 var rename = require('gulp-rename');
 var es = require('event-stream');
 var dotnet = require('gulp-dotnet-watch');
+var glob = require('glob');
 
 var config = {
     paths: {
@@ -31,8 +32,6 @@ var config = {
 gulp.task('connect', function () {
     // to do, write code to start the webserver using dotnet watch etc
 });
-
-
 
 gulp.task('open', ['connect'], function () {
     var options = {
@@ -65,24 +64,31 @@ gulp.task('images', function () {
 });
 
 gulp.task('js', function () {
-    // we define our input files, which we want to have
-    // bundled:
-    var files = config.paths.mainJsFiles;
-    // map them to our stream function
-    var tasks = files.map(function (entry) {
-        return browserify({ entries: [entry] })
-            .transform(babelify)
-            .bundle()
-            .on('error', console.error.bind(console))
-            .pipe(source(entry))
-            // rename them to have "bundle as postfix"
-            .pipe(rename({
-                extname: '.bundle.js'
-            }))
-            .pipe(gulp.dest(config.paths.dist + '/scripts'));
-    });
-    // create a merged stream
-    return es.merge.apply(null, tasks);
+
+    glob(config.paths.js, function (er, files) {
+        // files is an array of filenames. 
+        // If the `nonull` option is set, and nothing 
+        // was found, then files is ["**/*.js"] 
+        // er is an error object or null. 
+        //var files = config.paths.mainJsFiles;
+        // map them to our stream function
+        var tasks = files.map(function (entry) {
+            return browserify({ entries: [entry] })
+                .transform(babelify)
+                .bundle()
+                .on('error', console.error.bind(console))
+                .pipe(source(entry))
+                // rename them to have "bundle as postfix"
+                .pipe(rename({
+                    extname: '.bundle.js'
+                }))
+                .pipe(gulp.dest(config.paths.dist + '/scripts'));
+        });
+        // create a merged stream
+        return es.merge.apply(null, tasks);
+    })
+
+
 });
 
 gulp.task('build', ['css','js'], function () {

@@ -16,14 +16,11 @@ namespace Core.Web.Demo.Controllers
         public IActionResult ReactDemo1()
         {
             ViewData["Message"] = "Your application description page. 1233456";
-
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult ReactFluxBaseExample1()
         {
-            ViewData["Message"] = "Your c ontact page. this is changed on the server";
-
             return View();
         }
 
