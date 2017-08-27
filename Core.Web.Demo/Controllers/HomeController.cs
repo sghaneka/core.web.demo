@@ -24,6 +24,11 @@ namespace Core.Web.Demo.Controllers
             return View();
         }
 
+        public IActionResult ReactTechEvents()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View();
