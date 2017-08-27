@@ -15,4 +15,6 @@ class EventComponent extends React.Component {
     }
 }
 
-export default EventsListComponent;
+export default EventComponent;
+
+// <EventsListComponent />

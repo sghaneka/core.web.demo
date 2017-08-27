@@ -24,7 +24,7 @@ const EventsListComponent = props => {
 
     for (var i = 0; i < data.getEvents().length; i++) {
         // thumbNails.push(<div className="col-md-5"> { data.getEvents()[i].name} </div>)
-        thumbNails.push(<div className="col-md-5"> <EventThumbnailComponent eventDataThing={data.getEvents()[i]}  /> </div>)
+        thumbNails.push(<div className="col-md-5" key={i}> <EventThumbnailComponent eventDataThing={data.getEvents()[i]}  /> </div>)
     }
 
 
