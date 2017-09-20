@@ -1,4 +1,4 @@
-﻿export class EventData {
+﻿export class EventDataService {
 
     constructor() {
         this._events = [

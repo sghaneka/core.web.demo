@@ -1,7 +1,7 @@
 ﻿"use strict";
 
 import React from 'react';
-import { EventData } from './eventData.js';
+import { EventDataService } from '../data/eventDataService.js';
 import EventThumbnailComponent from './eventThumbnailComponent.jsx';
 
 let _dispatch = () => { console.log('lasers'); };
@@ -18,13 +18,13 @@ const myHandler = (e) => _dispatch();
 //}
 const EventsListComponent = props => {
 
-    var thumbNails = [];
+    let thumbNails = [];
 
-    var data = new EventData();
+    let eventDataService = new EventDataService();
 
-    for (var i = 0; i < data.getEvents().length; i++) {
+    for (var i = 0; i < eventDataService.getEvents().length; i++) {
         // thumbNails.push(<div className="col-md-5"> { data.getEvents()[i].name} </div>)
-        thumbNails.push(<div className="col-md-5" key={i}> <EventThumbnailComponent eventDataThing={data.getEvents()[i]}  /> </div>)
+        thumbNails.push(<div className="col-md-5" key={i}> <EventThumbnailComponent eventDataThing={eventDataService.getEvents()[i]}  /> </div>)
     }
 
 
