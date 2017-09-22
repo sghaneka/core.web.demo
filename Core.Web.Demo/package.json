@@ -43,6 +43,7 @@
     "mocha": "^3.3.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-toastr": "^2.9.3",
     "tree-kill": "^1.1.0",
     "vinyl-source-stream": "^1.1.0"
   }

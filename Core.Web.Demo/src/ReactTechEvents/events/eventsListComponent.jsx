@@ -9,14 +9,33 @@ let _dispatch = () => { console.log('lasers'); };
 const myHandler = (e) => _dispatch();
 
 
-//class EventsListComponent extends React.Component {
-//    render() {
-//        return (
+class EventsListComponent extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        console.log('Aw yeah, it\'s sandwich time, hombre!');
+    }
+
+    getInitialState() {
+        return {
+
+        };
+    }
+
+
+    render() {
+        return (
             
-//        )
-//    }
-//}
-const EventsListComponent = props => {
+        )
+    }
+}
+
+
+
+const EventsListComponentAsProp = props => {
 
     let thumbNails = [];
 
