@@ -1,6 +1,8 @@
-﻿"use strict";
+﻿//import * as toastr from '../../../../wwwroot/lib/toastr/toastr.js';
 
-import ReactToastr from 'react-toastr';
+"use strict";
+
+
 
 export class ToasterService {
 

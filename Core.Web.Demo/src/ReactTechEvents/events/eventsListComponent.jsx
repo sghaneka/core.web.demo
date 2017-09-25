@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { EventDataService } from '../data/eventDataService.js';
+import { ToasterService } from '../common/toasterService.js';
 import EventThumbnailComponent from './eventThumbnailComponent.jsx';
 
 let _dispatch = () => { console.log('lasers'); };
@@ -13,22 +14,32 @@ class EventsListComponent extends React.Component {
 
     constructor(props) {
         super(props);
+        let eventDataService = new EventDataService();
+        this.events = eventDataService.getEvents();
+        this.toasterService = ToasterService();
     }
 
     componentDidMount() {
         console.log('Aw yeah, it\'s sandwich time, hombre!');
+        this.toasterService.success('message', 'title');
     }
-
-    getInitialState() {
-        return {
-
-        };
-    }
-
 
     render() {
+        let thumbNails = [];
+
+        for (var i = 0; i < this.events.length; i++) {
+            thumbNails.push(<div className="col-md-5" key={i}> <EventThumbnailComponent eventDataThing={this.events[i]} /> </div>)
+        }
+
         return (
-            
+            <div>
+                <h1>Upcoming Angular 2 Events</h1>
+                <hr />
+                <div className="row">
+                    {thumbNails}
+                </div>
+                <button className="btn btn-primary" onClick={myHandler}>Log me</button>
+            </div>              
         )
     }
 }
