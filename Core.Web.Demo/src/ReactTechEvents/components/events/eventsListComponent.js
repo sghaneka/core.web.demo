@@ -1,9 +1,9 @@
 ﻿"use strict";
 
 import React from 'react';
-import { EventDataService } from '../data/eventDataService.js';
-import { ToasterService } from '../common/toasterService.js';
-import EventThumbnailComponent from './eventThumbnailComponent.jsx';
+import { EventDataService } from '../../services/data/eventDataService';
+import { ToasterService } from '../../services/common/toasterService';
+import EventThumbnailComponent from './eventThumbnailComponent';
 
 let _dispatch = () => { console.log('lasers'); };
 
@@ -16,7 +16,7 @@ class EventsListComponent extends React.Component {
         super(props);
         let eventDataService = new EventDataService();
         this.events = eventDataService.getEvents();
-        this.toasterService = ToasterService();
+        this.toasterService = new ToasterService();
     }
 
     componentDidMount() {

@@ -33,5 +33,10 @@ namespace Core.Web.Demo.Controllers
         {
             return View();
         }
+
+        public IActionResult ReactRouterBasics()
+        {
+            return View();
+        }
     }
 }
