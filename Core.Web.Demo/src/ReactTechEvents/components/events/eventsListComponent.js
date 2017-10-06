@@ -17,6 +17,7 @@ class EventsListComponent extends React.Component {
         let eventDataService = new EventDataService();
         this.events = eventDataService.getEvents();
         this.toasterService = new ToasterService();
+        this.thumbNailClick = this.thumbNailClick.bind(this);
     }
 
     componentDidMount() {
@@ -24,11 +25,15 @@ class EventsListComponent extends React.Component {
         this.toasterService.success('message', 'title');
     }
 
+    thumbNailClick(event) {
+        this.toasterService.success(event.name, 'title');
+    }
+
     render() {
         let thumbNails = [];
 
         for (var i = 0; i < this.events.length; i++) {
-            thumbNails.push(<div className="col-md-5" key={i}> <EventThumbnailComponent eventDataThing={this.events[i]} /> </div>)
+            thumbNails.push(<div className="col-md-5" key={i}> <EventThumbnailComponent onClick={this.thumbNailClick(this.events[i])} eventDataThing={this.events[i]} /> </div>)
         }
 
         return (
