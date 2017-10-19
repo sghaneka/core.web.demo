@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const EventThumbnailComponent = ({ eventDataThing }) => {
+const EventThumbnailComponent = ({ eventDataThing, clickHandler }) => {
 
 
     var startTime;
@@ -47,7 +47,7 @@ const EventThumbnailComponent = ({ eventDataThing }) => {
     
 
     return (
-        <div className="event-thumbnail">
+        <div className="event-thumbnail" onClick={function () { clickHandler(eventDataThing.name) }}  >
             <div className="well hoverwell thumbnail">
                 <h2>{eventDataThing.name}</h2>
                 <div>Date: {eventDataThing.date}</div>
