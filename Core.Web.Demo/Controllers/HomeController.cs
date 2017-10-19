@@ -29,6 +29,11 @@ namespace Core.Web.Demo.Controllers
             return View();
         }
 
+        public IActionResult ReactStarterKit()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View();

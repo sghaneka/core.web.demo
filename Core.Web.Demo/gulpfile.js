@@ -75,6 +75,7 @@ gulp.task('js', function () {
         var tasks = files.map(function (entry) {
             return browserify({ entries: [entry] })
                 .transform(babelify)
+                .transform(require('browserify-css'))
                 .bundle()
                 .on('error', console.error.bind(console))
                 .pipe(source(entry))
