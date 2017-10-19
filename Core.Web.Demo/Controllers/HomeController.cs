@@ -34,6 +34,11 @@ namespace Core.Web.Demo.Controllers
             return View();
         }
 
+        public IActionResult NotePad()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View();
