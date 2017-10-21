@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="src\NotePadRedux\node_modules\**" />
+    <Content Remove="src\NotePadRedux\node_modules\**" />
+    <EmbeddedResource Remove="src\NotePadRedux\node_modules\**" />
+    <None Remove="src\NotePadRedux\node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="css\site.css">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
