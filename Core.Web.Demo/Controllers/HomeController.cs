@@ -39,6 +39,11 @@ namespace Core.Web.Demo.Controllers
             return View();
         }
 
+        public IActionResult NotePadRedux()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View();
