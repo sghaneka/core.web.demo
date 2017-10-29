@@ -3,8 +3,8 @@ import Single from './Single';
 
 class Grid extends React.Component {
 
-    deleteNote(id) {
-        this.props.deleteNote(id);
+    removeNote(id) {
+        this.props.removeNote(id);
     }
 
     renderItems() {
@@ -12,7 +12,7 @@ class Grid extends React.Component {
             <Single
                 key={item.id}
                 note={item}
-                deleteNote = {this.deleteNote.bind(this)}
+                removeNote = {this.removeNote.bind(this)}
             />
         );
     }
