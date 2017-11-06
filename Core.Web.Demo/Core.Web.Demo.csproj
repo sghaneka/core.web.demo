@@ -37,6 +37,7 @@
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="src\ReactDinnerMenusApp\Components\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\scripts\" />
     <Folder Include="wwwroot\scripts\" />

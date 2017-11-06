@@ -13,9 +13,8 @@ namespace Core.Web.Demo.Controllers
             return View();
         }
 
-        public IActionResult ReactDemo1()
+        public IActionResult ReactDinnerMenusApp()
         {
-            ViewData["Message"] = "Your application description page. 1233456";
             return View();
         }
 
