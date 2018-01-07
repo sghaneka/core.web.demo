@@ -52,5 +52,10 @@ namespace Core.Web.Demo.Controllers
         {
             return View();
         }
+
+        public IActionResult MobxIntro()
+        {
+            return View();
+        }
     }
 }

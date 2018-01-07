@@ -49,12 +49,12 @@ gulp.task('css', function () {
 });
 
 gulp.task('watch', function () {
-    return gulp.watch( [config.paths.js, config.paths.css], ['js', 'css', 'lint']);
+    return gulp.watch( [config.paths.js, config.paths.css], ['js', 'css']);
 });
 
 gulp.task('lint', function () {
     return gulp.src(config.paths.js)
-       .pipe(eslint({ config: 'eslint.config.json' }))
+        .pipe(eslint({ config: 'eslint.config.json' }))
         .pipe(eslint.format());
 });
 
